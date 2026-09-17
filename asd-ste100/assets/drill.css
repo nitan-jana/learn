@@ -93,3 +93,13 @@
   margin-top: 0.5rem; padding-left: 0.8rem;
   border-left: 2px solid var(--rule); color: var(--ink-soft); font-size: 0.87rem;
 }
+
+/* Heuristic check output (data-check="passive agent nominalisation"). */
+.d-flags { list-style: none; padding: 0; margin: 0.6rem 0 0; font-size: 0.82rem; }
+.d-flags li { margin: 0 0 0.25rem; color: var(--ink-soft); font-family: var(--serif); font-style: italic; }
+.d-flags .tag {
+  font-family: var(--sans); font-style: normal; font-size: 0.66rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+  border: 1px solid var(--rule); border-radius: 2px; padding: 0.05rem 0.3rem; margin-right: 0.4rem;
+}
+.d-clean { margin: 0.6rem 0 0; font-size: 0.8rem; color: var(--good); }

@@ -24,9 +24,9 @@
   plus 8 General Recommendations (GR-1..GR-8; GR-7 inclusive language and GR-8 possessive form are new in Issue 9).
 
 ## Teaching plan (rolling)
-1. ✅ One idea, one sentence — sentence length and splitting. (lesson 0001)
-2. Active voice, and naming the actor.
-3. Noun clusters (max 3 words) — highest-value rule for product copy.
+1. ✅ One idea, one sentence — rules 5.1, 5.2, 6.3, 4.2. (lesson 0001, done 2026-09-17)
+2. ✅ Name the actor — rules 3.6, 3.7, the four conversion methods. (lesson 0002, reference/passive-to-active.html)
+3. Noun clusters (rule 2.1, max 3 words) — highest-value rule for product copy.
 4. One word, one meaning: the approved dictionary, Technical Names, Technical Verbs.
 5. Verb tense restrictions, and why -ing forms are banned.
 6. Warnings, cautions, and conditional instructions (order of clauses).

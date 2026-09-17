@@ -32,10 +32,48 @@
     try { return window.localStorage.getItem(key) || ""; } catch (e) { return ""; }
   }
 
+  /* ---- heuristic checks -------------------------------------------
+   * These are hints, not a checker. They catch the common shapes and
+   * will miss others, so the lesson text always says so out loud.     */
+
+  var IRREGULAR = "done|made|built|held|given|taken|sent|set|put|shown|known|written|read|found|kept|left|lost|met|run";
+
+  var CHECKS = {
+    passive: {
+      label: "possible passive voice",
+      re: new RegExp(
+        "\\b(?:am|is|are|was|were|be|been|being)\\s+(?:\\w+ly\\s+)?" +
+        "(?:\\w+(?:ed|en)|" + IRREGULAR + ")\\b", "gi")
+    },
+    agent: {
+      label: "agent hidden behind \u201cby\u201d",
+      re: /\bby\s+(?:a|an|the)\s+\w+/gi
+    },
+    nominalisation: {
+      label: "action buried in a noun",
+      re: /\b(?:\w{3,}(?:tion|ment|ance|ence)\s+of|(?:removal|approval|arrival|disposal|renewal|refusal)\s+of|(?:perform|conduct|provide|carry out|make|do)\s+(?:a|an|the)\s+\w+)/gi
+    }
+  };
+
+  function runChecks(text, names) {
+    var hits = [];
+    names.forEach(function (name) {
+      var check = CHECKS[name];
+      if (!check) { return; }
+      var m, re = new RegExp(check.re.source, check.re.flags);
+      while ((m = re.exec(text)) !== null) {
+        hits.push({ label: check.label, text: m[0] });
+        if (m.index === re.lastIndex) { re.lastIndex++; }
+      }
+    });
+    return hits;
+  }
+
   /* ---- drill ------------------------------------------------------ */
 
   function initDrill(root, index) {
     var max = parseInt(root.dataset.max || "20", 10);
+    var checks = (root.dataset.check || "").split(/\s+/).filter(Boolean);
     var source = root.dataset.source || "";
     var id = "ste-drill-" + (document.title || "") + "-" + index;
     var model = root.querySelector("template.model");
@@ -98,7 +136,19 @@
         verdict = '<strong class="good">Every sentence is ' + max + " words or fewer, across " +
           sentences.length + " sentences. Now read it aloud.</strong>";
       }
-      meter.innerHTML = "<ul>" + rows + "</ul>" + verdict;
+      var flags = "";
+      if (checks.length) {
+        var hits = runChecks(text, checks);
+        if (hits.length) {
+          flags = '<ul class="d-flags">' + hits.map(function (h) {
+            return '<li><span class="tag">' + h.label + '</span> &ldquo;' + h.text + '&rdquo;</li>';
+          }).join("") + "</ul>";
+        } else {
+          flags = '<p class="d-clean">No passive constructions or buried actions detected. ' +
+            "This is a rough pattern match, not a checker &mdash; read it yourself too.</p>";
+        }
+      }
+      meter.innerHTML = "<ul>" + rows + "</ul>" + verdict + flags;
     }
 
     ta.addEventListener("input", update);
