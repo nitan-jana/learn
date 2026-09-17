@@ -1,0 +1,191 @@
+/* Shared stylesheet for the ASD-STE100 teaching workspace.
+   Every lesson and reference document links this file. Tufte-influenced:
+   generous margins, a single measure, sidenotes, and printable by default. */
+
+:root {
+  --ink: #16150f;
+  --ink-soft: #5c5850;
+  --paper: #fffef9;
+  --rule: #d8d3c4;
+  --accent: #8a2b06;      /* used for emphasis and rule numbers */
+  --good: #1d6b3f;
+  --bad: #9b1c1c;
+  --panel: #f5f2e8;
+  --measure: 36rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "SF Mono", "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e8e4d8; --ink-soft: #9c968a; --paper: #14140f; --rule: #3a382f;
+    --accent: #e0885f; --good: #6fc08d; --bad: #e08a8a; --panel: #1e1d16;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  padding: 4rem 1rem 8rem;
+  max-width: calc(var(--measure) + 14rem);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-kerning: normal;
+}
+
+/* ---- Structure ---------------------------------------------------- */
+
+header.masthead { max-width: var(--measure); margin-bottom: 3rem; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.75rem;
+}
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.15;
+  font-weight: 400;
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.015em;
+}
+
+.standfirst { font-size: 1.15rem; color: var(--ink-soft); font-style: italic; margin: 0; }
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 3rem 0 0.8rem;
+  max-width: var(--measure);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 2rem 0 0.5rem;
+}
+
+p, ul, ol, blockquote, .note, figure { max-width: var(--measure); }
+p { margin: 0 0 1.1rem; }
+li { margin-bottom: 0.4rem; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3.5rem 0; max-width: var(--measure); }
+
+/* ---- Sidenotes ----------------------------------------------------- */
+
+.sidenote {
+  float: right;
+  clear: right;
+  width: 11rem;
+  margin: 0.3rem -13rem 1rem 0;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+.sidenote a { color: inherit; }
+
+@media (max-width: 62rem) {
+  .sidenote {
+    float: none; width: auto; margin: 0 0 1.2rem;
+    border-left: 2px solid var(--rule); padding-left: 0.8rem;
+  }
+}
+
+/* ---- Callouts ------------------------------------------------------ */
+
+.note, .rulecard, .voice {
+  background: var(--panel);
+  border-left: 3px solid var(--rule);
+  padding: 0.9rem 1.1rem;
+  margin: 1.6rem 0;
+  font-size: 0.97rem;
+}
+.rulecard { border-left-color: var(--accent); }
+.voice { border-left-color: var(--good); }
+.note p:last-child, .rulecard p:last-child, .voice p:last-child { margin-bottom: 0; }
+
+.rulecard .rulenum {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ---- Examples ------------------------------------------------------ */
+
+.pair { max-width: var(--measure); margin: 1.5rem 0; }
+.pair > div { padding: 0.7rem 0.9rem; border-left: 3px solid var(--rule); margin-bottom: 0.5rem; }
+.pair .before { border-left-color: var(--bad); }
+.pair .after  { border-left-color: var(--good); }
+.pair .label {
+  font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 0.25rem;
+}
+.pair .before .label { color: var(--bad); }
+.pair .after .label { color: var(--good); }
+
+code, .mono { font-family: var(--mono); font-size: 0.88em; }
+
+/* ---- Tables (reference sheets) ------------------------------------- */
+
+table { border-collapse: collapse; width: 100%; max-width: var(--measure); margin: 1.5rem 0; font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.5rem 0.7rem 0.5rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+
+/* ---- Footer / navigation ------------------------------------------ */
+
+footer.lesson-foot {
+  max-width: var(--measure);
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+footer.lesson-foot ul { list-style: none; padding: 0; }
+footer.lesson-foot li { margin-bottom: 0.35rem; }
+
+.ask {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  background: var(--panel);
+  border: 1px dashed var(--rule);
+  padding: 0.8rem 1rem;
+  max-width: var(--measure);
+  margin: 2.5rem 0 0;
+}
+
+/* ---- Print --------------------------------------------------------- */
+
+@media print {
+  :root { --paper: #fff; --ink: #000; --panel: #f2f2f2; }
+  body { padding: 0; font-size: 10.5pt; max-width: none; }
+  .sidenote { float: none; width: auto; margin: 0 0 1rem; border-left: 2px solid #ccc; padding-left: .6rem; }
+  .no-print, .drill button, .quiz button { display: none !important; }
+  a { color: #000; text-decoration: none; }
+  h2 { break-after: avoid; }
+  .rulecard, .pair, table { break-inside: avoid; }
+}

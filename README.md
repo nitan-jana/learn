@@ -8,6 +8,7 @@ so a topic can be moved, zipped, or abandoned without breaking anything.
 | Topic | Mission | Started | Lessons |
 | --- | --- | --- | --- |
 | [asd-ste100](./asd-ste100/) | Simplified Technical English as a discipline for blog, product, and social writing | 2026-09-17 | 1 |
+| [writing-style](./writing-style/) | Prose craft after STE: Williams on cohesion and emphasis, then Diátaxis for document shape | queued | 0 |
 
 `tools/` is shared, and is the one exception to the no-sharing rule: small local scripts with their
 own `package.json`, used to prepare material. Nothing in `tools/` is ever linked from a lesson.
