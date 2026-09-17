@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Idea, One Sentence</title>
+<meta name="description" content="Lesson 1 of the ASD-STE100 workspace: the sentence-length rules, and how to split a sentence without mangling it.">
+<link rel="stylesheet" href="../assets/course.css">
+<link rel="stylesheet" href="../assets/drill.css">
+<script src="../assets/drill.js" defer></script>
+</head>
+<body>
+
+<header class="masthead">
+  <p class="eyebrow">Lesson 1 &middot; ASD-STE100</p>
+  <h1>One idea, one sentence</h1>
+  <p class="standfirst">The whole standard rests on one habit: put a single idea in a sentence, and stop. Learn to do that by counting, and half of STE follows.</p>
+</header>
+
+<h2>Sixty seconds of context</h2>
+
+<p class="sidenote">
+  STE began in the late 1970s as AECMA Simplified English, first released in 1986, for aircraft
+  maintenance manuals read by mechanics who did not speak English natively.
+  <a href="https://www.asd-ste100.org/about_STE.html">About STE</a>
+</p>
+
+<p>ASD-STE100 is a <em>controlled natural language</em>: a deliberately restricted subset of English,
+defined so that a sentence cannot be read two ways. It has two parts — <strong>53 writing rules in
+9 sections</strong>, and a <strong>dictionary of about 900 approved words</strong>, each approved with
+exactly one meaning and one part of speech.
+(<a href="https://www.asd-ste100.org/about_STE.html">ASD</a>)</p>
+
+<p>It was built for maintenance procedures, where a misread instruction injures somebody. That origin
+is worth keeping in mind, because it explains the severity of the rules. But ASD is explicit that the
+benefits "are indeed applicable across all sectors", and that its principles "can significantly improve
+the readability and clarity of technical documentation across any industry."
+(<a href="https://www.asd-ste100.org/STE_faq.html">FAQ</a>)</p>
+
+<p>You are going to learn it one rule at a time. Today: sentence length.</p>
+
+<h2>Today's rule</h2>
+
+<div class="rulecard">
+  <span class="rulenum">Rule 5.1 &middot; Procedural writing</span>
+  <p>“Write short sentences. Use a maximum of 20 words in each sentence.”</p>
+</div>
+
+<div class="rulecard">
+  <span class="rulenum">Rule 5.2 &middot; Procedural writing</span>
+  <p>“Write only one instruction in each sentence unless two or more actions occur at the same time.”</p>
+</div>
+
+<div class="rulecard">
+  <span class="rulenum">Rule 6.3 &middot; Descriptive writing</span>
+  <p>“Write short sentences. Use a maximum of 25 words in each sentence.”</p>
+</div>
+
+<div class="rulecard">
+  <span class="rulenum">Rule 4.2 &middot; Sentences</span>
+  <p>“Do not omit words or use contractions to make your sentences shorter.”</p>
+</div>
+
+<p class="sidenote">
+  All four rules are quoted verbatim from
+  <a href="https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf">ASD-STE100 Issue 9</a>,
+  Part 1, pages 1&#8209;5&#8209;1, 1&#8209;6&#8209;4, and 1&#8209;4&#8209;1. One nuance: a <em>note</em>
+  inside a procedure is exempt from rule 5.1 and gets the descriptive limit of 25 words, because a note
+  carries information and not an instruction.
+</p>
+
+<p>Four rules, one idea. Three things are happening in it, and only the first is arithmetic.</p>
+
+<ol>
+  <li><strong>A ceiling.</strong> Twenty words is not a target. It is the point past which a reader has to hold too much in working memory to parse the sentence in one pass.</li>
+  <li><strong>A unit.</strong> One sentence carries one instruction. The reader's eye leaves the page to do the work, and must come back to a clean boundary.</li>
+  <li><strong>A floor.</strong> Rule 4.2 forbids buying the word count by deleting words or contracting them. Telegraphic English — <em>Remove panel, disconnect cable</em> — is a violation, not a shortcut. And rule 4.5 then <em>requires</em> the article you were tempted to drop.</li>
+</ol>
+
+<p>That third clause is the one people miss. The limits are not a compression target; they are a signal
+that the sentence is carrying more than one idea. The fix is to split, not to squeeze.</p>
+
+<h2>What the split looks like</h2>
+
+<div class="pair">
+  <div class="before">
+    <span class="label">Before &middot; 34 words, 1 sentence</span>
+    Once the container has finished building, which can take a couple of minutes on a cold cache,
+    you can run the seed script, although you should check that the database is actually reachable first.
+  </div>
+  <div class="after">
+    <span class="label">After &middot; 3 sentences, longest is 11 words</span>
+    Wait for the container to build. A cold cache can make this take two minutes.
+    Make sure that the database is reachable, then run the seed script.
+  </div>
+</div>
+
+<p>Here is the standard's own worked example. It is the one non-aerospace example in the
+sentence-length rule, and it splits on exactly the same seam: the list of things a phone does was a
+second sentence hiding inside the first.</p>
+
+<div class="pair">
+  <div class="before">
+    <span class="label">Non-STE &middot; 31 words</span>
+    A smartphone is a cellular telephone that has an integrated computer and many other functions,
+    such as an operating system, internet browsing as well as the ability to run software applications.
+  </div>
+  <div class="after">
+    <span class="label">STE &middot; 15 words, then 16</span>
+    A smartphone is a cellular telephone that has an integrated computer and many other functions.
+    It includes an operating system and an internet browser, and it can also operate software applications.
+  </div>
+</div>
+
+<p>Notice what the split did beyond shortening. It put the check <em>before</em> the action, where the
+reader needs it. The original buried it in a trailing clause, after the instruction it was meant to
+guard. Long sentences hide ordering errors; splitting exposes them.</p>
+
+<h2>Your turn</h2>
+
+<p>Rewrite each one. The counter updates as you type and marks any sentence over the limit.
+Do not look at the model answer until you have written something.</p>
+
+<h3>Drill 1 &middot; a procedure, limit 20</h3>
+
+<div class="drill" data-max="20" data-source="After you have installed the dependencies, you should then run the migration script, which will create the tables in the database, and then you can start the dev server to check that everything is working.">
+  <template class="model">
+    <p>Install the dependencies. Run the migration script to create the database tables. Start the dev server and check that the application works.</p>
+    <p class="why">Three actions became three sentences. Each one starts with the verb, which is what
+    an instruction is for. "You should then" carried no information and went.</p>
+  </template>
+</div>
+
+<h3>Drill 2 &middot; descriptive text, limit 25</h3>
+
+<div class="drill" data-max="25" data-source="The connection pooler, which sits between your application and Postgres and is responsible for reusing existing connections instead of opening a new one for each request, can run in either transaction mode or session mode, depending on whether your queries rely on session state.">
+  <template class="model">
+    <p>The connection pooler sits between your application and Postgres. It reuses existing connections
+    instead of opening a new connection for each request. The pooler runs in transaction mode or session
+    mode. Use session mode if your queries rely on session state.</p>
+    <p class="why">The relative clause ("which sits&hellip;") was doing the work of a whole sentence, so it
+    became one. The final sentence turned a description of a condition into advice the reader can act on.</p>
+  </template>
+</div>
+
+<h3>Drill 3 &middot; three instructions in one breath, limit 20</h3>
+
+<div class="drill" data-max="20" data-source="Copy the .env.example file to .env and fill in your API key, then restart the server, but make sure you don't commit the .env file.">
+  <template class="model">
+    <p>Copy the file .env.example to .env. Put your API key in the new file. Restart the server.
+    Do not commit the file .env.</p>
+    <p class="why">This one is already under 20 words, and it is still wrong: four instructions in one
+    sentence. Length is the symptom the rule can measure; the number of ideas is the disease.
+    Note that "don't" became "do not": rule 4.2 bans contractions outright.</p>
+  </template>
+</div>
+
+<h2>Check yourself</h2>
+
+<div class="quiz">
+
+  <div class="q" data-answer="2">
+    <p class="qnum">Question 1</p>
+    <p class="stem">What is the sentence-length limit for an instruction?</p>
+    <ul>
+      <li>Fifteen words per sentence</li>
+      <li>Thirty words per sentence</li>
+      <li>Twenty words per sentence</li>
+      <li>Twelve words per sentence</li>
+    </ul>
+    <template class="explain">Twenty for instructions, twenty-five for descriptive text. The looser limit
+    for description exists because explanation genuinely needs subordinate structure; an instruction does not.</template>
+  </div>
+
+  <div class="q" data-answer="1">
+    <p class="qnum">Question 2</p>
+    <p class="stem">When may one sentence hold two instructions?</p>
+    <ul>
+      <li>When the sentence stays short</li>
+      <li>When the actions happen together</li>
+      <li>When the actions are related</li>
+      <li>When the reader is expert</li>
+    </ul>
+    <template class="explain">Simultaneity is the exception: <em>Hold the switch to TEST and make sure the
+    light comes on.</em> Two actions, one moment, so one sentence. Sequence is never a reason to combine.</template>
+  </div>
+
+  <div class="q" data-answer="3">
+    <p class="qnum">Question 3</p>
+    <p class="stem">A 30-word step is cut to 12 words by deleting every article and the subject. Verdict?</p>
+    <ul>
+      <li>Right, because the limit holds</li>
+      <li>Right, because shorter reads faster</li>
+      <li>Wrong, because it stays passive</li>
+      <li>Wrong, because words were dropped</li>
+    </ul>
+    <template class="explain">Omitting a verb, a subject, or an article to shorten the text is its own rule
+    violation. You hit the number and lost the grammar the reader uses to parse the sentence.</template>
+  </div>
+
+</div>
+
+<h2>For your own writing</h2>
+
+<div class="voice">
+  <p>Your mission is blog posts, product copy, and posts for engineers — not maintenance manuals. So be
+  deliberate about what you take.</p>
+  <p><strong>Take the ceiling as a diagnostic.</strong> When a sentence in your draft runs past ~25 words,
+  it is usually carrying two ideas, and one of them is being smuggled in a subordinate clause. Split it,
+  read both halves, and keep the better one. That is true of prose that will never see an STE checker.</p>
+  <p><strong>Take the floor absolutely.</strong> Never buy brevity by dropping words. Your existing voice
+  already agrees with this.</p>
+  <p><strong>Leave the uniformity.</strong> A maintenance manual wants every sentence the same shape;
+  your posts do not. Varying rhythm — a 20-word sentence, then a four-word one — is how your prose lands.
+  STE forbids the long one; you should not. Applying full STE compliance to a LinkedIn post would produce
+  something correct and dead.</p>
+</div>
+
+<h2>Read next</h2>
+
+<p><strong>Primary source:</strong>
+<a href="https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf">ASD-STE100 Issue 9 (PDF, free)</a>.
+Read the introduction and skim Part 1 — twenty minutes, no more. Do not attempt the dictionary yet.
+It is the real thing, and everything in these lessons is checkable against it.</p>
+
+<div class="ask no-print">
+  <strong>Stuck, or disagree with a model answer?</strong> Ask your teacher in this workspace. Bring a
+  paragraph of your own writing and we will run it through today's rule together — that is the fastest
+  way to make this stick.
+</div>
+
+<footer class="lesson-foot">
+  <ul>
+    <li><a href="../reference/glossary.html">Reference &middot; STE glossary</a></li>
+    <li><a href="../MISSION.md">Mission</a> &middot; <a href="../RESOURCES.md">Resources</a></li>
+    <li>Next: active voice, and naming the actor.</li>
+  </ul>
+</footer>
+
+</body>
+</html>

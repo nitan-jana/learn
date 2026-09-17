@@ -1,0 +1,95 @@
+/* Styles for the .drill and .quiz components in drill.js. */
+
+.drill, .quiz {
+  max-width: var(--measure);
+  margin: 1.8rem 0;
+  font-family: var(--sans);
+  font-size: 0.93rem;
+}
+
+.d-before {
+  background: var(--panel);
+  border-left: 3px solid var(--bad);
+  padding: 0.7rem 0.9rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+}
+.d-before .label, .quiz .qnum {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bad);
+  margin-bottom: 0.3rem;
+}
+.quiz .qnum { color: var(--ink-soft); }
+
+.d-input {
+  display: block;
+  width: 100%;
+  margin-top: 0.7rem;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  resize: vertical;
+}
+.d-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.d-meter { margin-top: 0.6rem; font-size: 0.82rem; }
+.d-meter ul { list-style: none; padding: 0; margin: 0 0 0.5rem; }
+.d-meter li { margin: 0 0 0.2rem; color: var(--ink-soft); }
+.d-meter li.ok .n { color: var(--good); }
+.d-meter li.over .n { color: var(--bad); }
+.d-meter .n {
+  display: inline-block; min-width: 1.6rem; font-family: var(--mono); font-weight: 700;
+}
+.d-meter .frag { font-family: var(--serif); font-style: italic; opacity: 0.75; }
+.d-meter .good { color: var(--good); font-weight: 600; }
+.d-meter .bad  { color: var(--bad); font-weight: 600; }
+.d-meter .warn { color: var(--accent); font-weight: 600; }
+
+.d-actions { margin-top: 0.7rem; }
+
+.drill button, .quiz button {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  padding: 0.4rem 0.8rem;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.drill button:hover, .quiz button:hover:not(:disabled) { border-color: var(--accent); }
+
+.d-answer {
+  margin-top: 0.8rem;
+  border-left: 3px solid var(--good);
+  background: var(--panel);
+  padding: 0.7rem 0.9rem;
+  font-family: var(--serif);
+  font-size: 1rem;
+}
+.d-answer p { margin: 0 0 0.7rem; }
+.d-answer p:last-child { margin-bottom: 0; }
+.d-answer .why { font-family: var(--sans); font-size: 0.85rem; color: var(--ink-soft); }
+
+.quiz { border-top: 1px solid var(--rule); padding-top: 1.2rem; }
+.quiz .q { margin-bottom: 1.6rem; }
+.quiz .stem { font-family: var(--serif); font-size: 1rem; margin: 0 0 0.6rem; max-width: none; }
+.quiz ul { list-style: none; padding: 0; margin: 0; max-width: none; }
+.quiz li { margin: 0 0 0.35rem; }
+.quiz li button { display: block; width: 100%; text-align: left; }
+.quiz button.right { border-color: var(--good); color: var(--good); font-weight: 600; }
+.quiz button.wrong { border-color: var(--bad); color: var(--bad); text-decoration: line-through; }
+.quiz button:disabled { cursor: default; opacity: 0.85; }
+.q-out {
+  margin-top: 0.5rem; padding-left: 0.8rem;
+  border-left: 2px solid var(--rule); color: var(--ink-soft); font-size: 0.87rem;
+}

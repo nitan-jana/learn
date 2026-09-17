@@ -1,0 +1,9 @@
+# Copyrighted source documents. Free to download, not free to redistribute.
+# Each topic's source/README.md records where to get them.
+*/source/*.pdf
+
+node_modules/
+
+# Editor and OS noise
+.DS_Store
+*.swp
